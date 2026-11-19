@@ -23,6 +23,7 @@ void S3D_LoadMeshPlane(S3D_Mesh* mesh)
 void S3D_LoadMeshSphere(S3D_Mesh* mesh)
 {
 	par_shapes_mesh* par = par_shapes_create_parametric_sphere(8, 8);
+	TraceLog(LOG_INFO, "Sphere vertices: %d", par->npoints); //First debugging comment: Check the number of vertices in the sphere mesh
 	S3D_LoadMeshPar(mesh, par);
 	par_shapes_free_mesh(par);
 }
