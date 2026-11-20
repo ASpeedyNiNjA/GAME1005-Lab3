@@ -129,6 +129,9 @@ public:
 	void Update(S3D_Renderer* renderer) final
 	{
 		S3D_ClearColor(renderer, BLACK);
+
+		float angle = (float)GetTime();
+
 		//S3D_DrawTriangleWireframes(renderer, triangle_vertices[0], triangle_vertices[1], triangle_vertices[2], RED);
 
 		for (size_t i = 0; i < plane_indices.size(); i += 3)
@@ -151,6 +154,13 @@ public:
 			uint16_t index2 = sphere.indices[i + 2];
 
 			Vector3 ndc0 = sphere.positions[index0];
+
+			float x = ndc0.x;
+			float z = ndc0.z;
+
+			ndc0.x = x * cosf(angle) + z * sinf(angle);
+			ndc0.z = -x * sinf(angle) + z * cosf(angle);
+
 			Vector3 ndc1 = sphere.positions[index1];
 			Vector3 ndc2 = sphere.positions[index2];
 
