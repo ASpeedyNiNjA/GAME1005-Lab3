@@ -144,7 +144,10 @@ public:
 			S3D_DrawTriangleWireframes(renderer, ndc0, ndc1, ndc2, RED);
 		}
 
-
+		for (size_t i = 0; i < sphere.indices.size(); i += 3)
+		{
+			
+		}
 
 		// Render the sphere by sampling its index buffer by Thursday the 19th at midnight!
 		// Remove junk files from your project, and upload as a .zip (just download your project from GitHub)!
