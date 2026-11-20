@@ -155,14 +155,28 @@ public:
 
 			Vector3 ndc0 = sphere.positions[index0];
 
-			float x = ndc0.x;
-			float z = ndc0.z;
+			float x0 = ndc0.x;
+			float z0 = ndc0.z;
 
-			ndc0.x = x * cosf(angle) + z * sinf(angle);
-			ndc0.z = -x * sinf(angle) + z * cosf(angle);
+			ndc0.x = x0 * cosf(angle) + z0 * sinf(angle);
+			ndc0.z = -x0 * sinf(angle) + z0 * cosf(angle);
 
 			Vector3 ndc1 = sphere.positions[index1];
+
+			float x1 = ndc1.x;
+			float z1 = ndc1.z;
+
+			ndc1.x = x1 * cosf(angle) + z1 * sinf(angle);
+			ndc1.z = -x1 * sinf(angle) + z1 * cosf(angle);
+
+
 			Vector3 ndc2 = sphere.positions[index2];
+
+			float x2 = ndc2.x;
+			float z2 = ndc2.z;
+
+			ndc2.x = x2 * cosf(angle) + z2 * sinf(angle);
+			ndc2.z = -x2 * sinf(angle) + z2 * cosf(angle);
 
 			S3D_DrawTriangleWireframes(renderer, ndc0, ndc1, ndc2, GREEN);
 		}
