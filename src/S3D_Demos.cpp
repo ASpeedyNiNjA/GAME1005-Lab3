@@ -146,7 +146,15 @@ public:
 
 		for (size_t i = 0; i < sphere.indices.size(); i += 3)
 		{
-			
+			uint16_t index0 = sphere.indices[i + 0];
+			uint16_t index1 = sphere.indices[i + 1];
+			uint16_t index2 = sphere.indices[i + 2];
+
+			Vector3 ndc0 = sphere.positions[index0];
+			Vector3 ndc1 = sphere.positions[index1];
+			Vector3 ndc2 = sphere.positions[index2];
+
+			S3D_DrawTriangleWireframes(renderer, ndc0, ndc1, ndc2, GREEN);
 		}
 
 		// Render the sphere by sampling its index buffer by Thursday the 19th at midnight!
