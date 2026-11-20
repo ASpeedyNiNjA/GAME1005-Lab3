@@ -158,6 +158,7 @@ public:
 			float x0 = ndc0.x;
 			float z0 = ndc0.z;
 
+			// AI enabled rotation of the sphere about the y-axis (up)
 			ndc0.x = x0 * cosf(angle) + z0 * sinf(angle);
 			ndc0.z = -x0 * sinf(angle) + z0 * cosf(angle);
 
@@ -166,6 +167,7 @@ public:
 			float x1 = ndc1.x;
 			float z1 = ndc1.z;
 
+			// Chris enabled
 			ndc1.x = x1 * cosf(angle) + z1 * sinf(angle);
 			ndc1.z = -x1 * sinf(angle) + z1 * cosf(angle);
 
@@ -181,7 +183,6 @@ public:
 			S3D_DrawTriangleWireframes(renderer, ndc0, ndc1, ndc2, GREEN);
 		}
 
-		// Render the sphere by sampling its index buffer by Thursday the 19th at midnight!
-		// Remove junk files from your project, and upload as a .zip (just download your project from GitHub)!
+
 	}
 };
